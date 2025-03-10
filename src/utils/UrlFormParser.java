@@ -28,7 +28,7 @@ public class UrlFormParser {
         Charset utf8 = StandardCharsets.UTF_8;
         String key = URLDecoder.decode(pairs[0], utf8);
         String value = URLDecoder.decode(pairs[1], utf8);
-        return Optional.of(Map.entry(key, (Object) value));
+        return Optional.of(Map.entry(key, value));
     }
     public static Map<String, Object> parseUrlEncoded(String rawLines, String delimiter) {
         String[] lines = rawLines.strip().split(delimiter);
@@ -49,13 +49,19 @@ public class UrlFormParser {
     }
 
     public static boolean areFieldsValid(HttpExchange exchange,
-                                         String template, String... fields) {
+                                         String template, String email, String... fields) {
         for (String field : fields) {
             if (field == null || field.isEmpty()) {
                 showError(exchange, template, "Все поля должны быть заполнены.");
                 return true;
             }
         }
+
+        if (!email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$")) {
+            showError(exchange, template, "Неверный формат e-mail!");
+            return true;
+        }
+
         return false;
     }
 

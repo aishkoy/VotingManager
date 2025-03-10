@@ -16,9 +16,7 @@ import static utils.ResponseWriter.showError;
 import static utils.UrlFormParser.*;
 
 public class RegisterHandler {
-    private RegisterHandler() {
-    }
-
+    private RegisterHandler() {}
     public static void handlePost(HttpExchange exchange) {
         Map<String, Object> data = UrlFormParser.parseFormData(exchange);
 

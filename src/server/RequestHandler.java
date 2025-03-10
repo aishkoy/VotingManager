@@ -5,6 +5,8 @@ import config.RouterConfig;
 import server.enums.ContentType;
 import server.enums.HttpStatus;
 import server.handlers.*;
+import utils.FileHandler;
+import utils.ResponseWriter;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -15,6 +17,9 @@ public class RequestHandler {
     }
     private void registerRoutes() {
         RouterConfig.registerGet("/", MainHandler::handle);
+
+        RouterConfig.registerGet("/register", RegisterHandler::handleGet);
+        RouterConfig.registerPost("/register", RegisterHandler::handlePost);
     }
 
     public void handleRequest(HttpExchange exchange) throws IOException {
