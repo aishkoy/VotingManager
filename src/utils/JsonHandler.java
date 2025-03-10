@@ -3,6 +3,7 @@ package utils;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import models.Candidate;
 import models.User;
 
 import java.io.File;
@@ -18,10 +19,15 @@ public class JsonHandler {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().serializeNulls().create();
     private static final String DIRECTORY = "data/";
     private static final Type USER_TYPE = new TypeToken<List<User>>(){}.getType();
-
-
+    private static final Type CANDIDATE_TYPE = new TypeToken<List<Candidate>>(){}.getType();
     private JsonHandler(){}
 
+    public static void writeCandidatesJson(String filename, List<Candidate> candidates){
+        writeJson(filename, candidates, CANDIDATE_TYPE);
+    }
+    public static List<Candidate> readCandidatesJson(String filename){
+        return readJson(filename, CANDIDATE_TYPE);
+    }
     public static List<User> readUsersJson(String fileName){
         return readJson(fileName, USER_TYPE);
     }
@@ -50,7 +56,6 @@ public class JsonHandler {
             System.out.println("Ошибка при записи файла: " + e.getMessage());
         }
     }
-
 
     private static Path getPath(String fileName) throws FileNotFoundException {
         File file = new File(DIRECTORY + fileName);
