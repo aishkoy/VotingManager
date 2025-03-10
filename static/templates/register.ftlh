@@ -20,8 +20,8 @@
 
         <form action="/register" method="POST" class="space-y-5">
             <div>
-                <label for="fullName" class="block text-emerald-300 text-sm mb-1">ФИО:</label>
-                <input type="text" id="fullName" name="fullName" required
+                <label for="name" class="block text-emerald-300 text-sm mb-1">ФИО:</label>
+                <input type="text" id="name" name="name" required
                        class="w-full bg-zinc-800 text-white border-0 border-b-2 border-emerald-500 p-2 focus:outline-none focus:border-emerald-300 transition-colors">
             </div>
             <div>
