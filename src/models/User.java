@@ -2,25 +2,15 @@ package models;
 
 public class User {
     private int id;
-    private String name;
-    private String email;
-    private String password;
+    private final String name;
+    private final String email;
+    private final String password;
     private int candidateId;
 
     public User(String name, String email, String password) {
         this.name = name;
         this.email = email;
         this.password = password;
-    }
-
-    public User(String name, String email, String password, int candidateId) {
-        this(name, email, password);
-        this.candidateId = candidateId;
-    }
-
-    public User(int id, String name, String email, String password, int candidateId) {
-        this(name, email, password, candidateId);
-        this.id = id;
     }
 
     public void setId(int id) {
@@ -38,6 +28,9 @@ public class User {
         return email;
     }
 
+    public String getPassword() {
+        return password;
+    }
 
     public int getCandidateId() {
         return candidateId;
