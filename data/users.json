@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "Аиша",
+    "email": "aisha.orozbekova@alatoo.edu.kg",
+    "password": "123456",
+    "candidateId": 6
+  },
+  {
+    "id": 2,
+    "name": "Gravestone",
+    "email": "ivan.ivanov@example.com",
+    "password": "123456",
+    "candidateId": 1
+  },
+  {
+    "id": 3,
+    "name": "Timur",
+    "email": "qwe@qwe.qwe",
+    "password": "123456",
+    "candidateId": 0
+  }
+]

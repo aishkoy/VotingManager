@@ -3,15 +3,15 @@
     "id": 6,
     "name": "Hershel Caffrey",
     "photo": "/images/6.jpeg",
-    "votes": 0,
-    "percentage": 0.0
+    "votes": 1,
+    "percentage": 50.0
   },
   {
-    "id": 5,
-    "name": "Hubert Takahashi",
-    "photo": "/images/5.jpeg",
-    "votes": 0,
-    "percentage": 0.0
+    "id": 1,
+    "name": "Markus Sillman",
+    "photo": "/images/1.jpeg",
+    "votes": 1,
+    "percentage": 50.0
   },
   {
     "id": 4,
@@ -21,9 +21,9 @@
     "percentage": 0.0
   },
   {
-    "id": 1,
-    "name": "Markus Sillman",
-    "photo": "/images/1.jpeg",
+    "id": 5,
+    "name": "Hubert Takahashi",
+    "photo": "/images/5.jpeg",
     "votes": 0,
     "percentage": 0.0
   },

@@ -18,8 +18,18 @@ public class RequestHandler {
     private void registerRoutes() {
         RouterConfig.registerGet("/", MainHandler::handle);
 
-        RouterConfig.registerGet("/register", RegisterHandler::handleGet);
-        RouterConfig.registerPost("/register", RegisterHandler::handlePost);
+        RouterConfig.registerGet("register", AuthHandler::handleGet);
+        RouterConfig.registerPost("register", AuthHandler::handleRegisterPost);
+
+        RouterConfig.registerGet("votes", VoteHandler::handleGet);
+        RouterConfig.registerPost("vote", VoteHandler::handlePost);
+
+        RouterConfig.registerGet("login", AuthHandler::handleGet);
+        RouterConfig.registerPost("login", AuthHandler::handleLoginPost);
+
+        RouterConfig.registerGet("logout", LogoutHandler::handle);
+
+        RouterConfig.registerGet("thankyou", ThankYouHandler::handle);
     }
 
     public void handleRequest(HttpExchange exchange) throws IOException {
