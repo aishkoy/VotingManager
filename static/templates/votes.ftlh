@@ -5,27 +5,26 @@
     <meta charset="UTF-8">
     <title>Who's winning?</title>
     <link rel="stylesheet" href="css/candidates.css">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
 
 <body>
-    <div class="container flex flex-col align-center">
+<div class="container flex flex-col align-center">
     <h1>Who's winning?</h1>
     <main class="flex flex-wrap align-center">
-    <div class="card">
-      <div class="flex flex-col align-center" href="#">
-        <img src="images/1.jpeg">
-        <p>Votes: 75%</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="flex flex-col align-center" href="#">
-        <img src="images/1.jpeg">
-        <p>Votes: 25%</p>
-      </div>
-    </div>
-    <a class="back flex align-center" href="/">back to main</a>
+        <#list candidates as candidate>
+            <div class="card ${(candidate?index == 0)?then('bg-red-500 border-red-600 border-2', '')}">
+                <div class="flex flex-col align-center">
+                    <img src="${candidate.photo}" class="w-50 h-50 rounded-md" alt="${candidate.name}">
+                    <p>${candidate.name}</p>
+                    <p>Votes: ${candidate.percentage?string("0.##")}%</p>
+                </div>
+            </div>
+        </#list>
+        <a class="back flex align-center" href="/">back to main</a>
+        <a class="back flex align-center" href="/logout">Logout</a>
     </main>
-    </div>
+</div>
 </body>
 
 </html>
