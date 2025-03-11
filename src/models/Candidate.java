@@ -12,11 +12,6 @@ public class Candidate {
         this.photo = photo;
     }
 
-    public Candidate(int id, String name, String photo) {
-        this(name, photo);
-        this.id = id;
-    }
-
     public void setId(int id) {
         this.id = id;
     }
