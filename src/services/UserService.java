@@ -32,6 +32,13 @@ public class UserService {
         saveUsers();
     }
 
+    public static User authenticate(String email, String password) {
+        return users.stream()
+                .filter(user -> user.getEmail().equals(email) && user.getPassword().equals(password))
+                .findFirst()
+                .orElse(null);
+    }
+
     public static List<User> getUsers() {
         return users;
     }
